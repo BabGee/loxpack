@@ -26,7 +26,7 @@ SECRET_KEY = 'mkv+sx(q%ulmh5d0+p@7+vacl9=wx^$3^7jn0wo2ywtbb(j8m!'
 #DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['jeremih.pythonanywhere.com', '127.0.0.1', '*']
+ALLOWED_HOSTS = ['loxpack.pythonanywhere.com', '127.0.0.1', '*']
 
 
 # Application definition
