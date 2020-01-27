@@ -4,6 +4,11 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+#map1 {
+  background-image: url("../images/don.jpg");
+}
+
 #slider-bg1 {
   background-image: url("../images/apartments/balconies.jpg");
 }

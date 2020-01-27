@@ -18,10 +18,16 @@ def pproperty(request, pk):
     return render(request, 'loxpack/property.html', context)
 
 def sale(request):
-    return render(request, 'loxpack/sale.html')
+    context = {
+        'sale_property' : Property.objects.filter(status__name='For Sale')
+    }
+    return render(request, 'loxpack/sale.html', context)
 
 def rent(request):
-    return render(request, 'loxpack/rent.html')
+    context = {
+        'rent_apartment' : Property.objects.filter(status__name='For Rent')
+    }
+    return render(request, 'loxpack/rent.html', context)
    
 def contact(request):
     return render(request, 'loxpack/contact.html')

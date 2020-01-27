@@ -125,7 +125,11 @@
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="staff">
 						<div class="img-wrap d-flex align-items-stretch">
-							<div class="img align-self-stretch" id="staff-img"></div>
+							<div class="img align-self-stretch">
+								<a href="{% url 'loxpack-property' pk=apartment.id %}">
+								<img src="{{apartment.image.url}}" alt="" height="250" width="320">
+								</a>
+							</div> 
 						</div>
 						<div class="text pt-3 text-center">
 							<a href="{% url 'loxpack-property' pk=apartment.id %}">
@@ -154,7 +158,11 @@
 			<div class="row">
 				{% for sale_prop in sale_property %}
 				<div class="col-md-6 course d-lg-flex ftco-animate">
-					<div class="img" id="sale-img"></div>
+					<div class="img">
+						<a href="{% url 'loxpack-property' pk=sale_prop.id %}">
+						<img src="{{sale_prop.image.url}}" alt="" height="250" width="320">
+						</a>
+					</div>
 					<div class="text bg-light p-4">
 						<h3><a href="{% url 'loxpack-property' pk=sale_prop.id %}">{{sale_prop.name}}</a></h3>
 						<p class="subheading"><span>Price:</span> {{sale_prop.price}} M</p>
