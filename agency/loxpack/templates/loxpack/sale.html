@@ -5,6 +5,18 @@
 
 {% block content %}
 
+<section class="hero-wrap hero-wrap-2" id="staff-img">
+  <div class="overlay"></div>
+  <div class="container">
+  <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="col-md-9 ftco-animate text-center">
+      <h1 class="mb-2 bread">Properties For Sale</h1>
+      <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'loxpack-home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>For Sale <i class="ion-ios-arrow-forward"></i></span></p>
+      </div>
+  </div>
+  </div>
+</section>
+
 <main class="mt-5 pt-4">
     <div class="container dark-grey-text mt-5">
     {% for property in sale_property %} 
@@ -12,9 +24,10 @@
       <div class="row wow fadeIn">
 
         <!--Grid column-->
-        <div class="col-md-6 mb-4">  
-          <img src="{{property.image.url}}" class="img-fluid" alt="">
-          
+        <div class="col-md-6 mb-4">
+          <a href="{% url 'loxpack-property' pk=property.id %}">  
+            <img src="{{property.image.url}}" class="img-fluid" alt="">
+          </a>
         </div>
         <!--Grid column-->
 
@@ -25,7 +38,7 @@
           <div class="p-4">
 
             <div class="mb-3">
-              <a href="">
+              <a href="{% url 'loxpack-property' pk=property.id %}">
                 <span class="badge purple mr-1">{{ property.name}}</span>
               </a>
             </div>
@@ -48,6 +61,6 @@
       <!--Grid row-->
       {% endfor %}
     </div>
-  </main>
+</main>
 
 {% endblock content %}

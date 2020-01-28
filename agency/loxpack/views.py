@@ -3,6 +3,8 @@ from property.models import Property
 
 def home(request):
     context = {
+        'latest_property' : Property.objects.filter(uniqueness__name='Latest'),
+        'offer_property' : Property.objects.filter(uniqueness__name='Offer').first(),
         'rent_apartment' : Property.objects.filter(status__name='For Rent', category__name='Apartment'),
         'sale_property' : Property.objects.filter(status__name='For Sale')
     }

@@ -7,33 +7,24 @@
 
 	<!-- hero slider -->
     <section class="home-slider owl-carousel">
-		<div class="slider-item" id="slider-bg1">
-			<div class="overlay"></div>
+		{% for latest_property in latest_property %}
+		<div class="slider-item">
+			<div class="overlay">
+				<img src="{{latest_property.image.url}}" alt=""></div>
 		  <div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
 			<div class="col-md-8 text-center ftco-animate">
-			  <h1 class="mb-4">Fully Furnished <span>Apartments</span></h1>
-			  <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">For Sale</a></p>
+			  <h1 class="mb-4">{{latest_property.name}} <span>{{latest_property.area}}</span></h1>
+			  <p><a href="{% url 'loxpack-property' pk=latest_property.id %}" class="btn btn-secondary px-4 py-3 mt-3">Details</a></p>
 			</div>
 		  </div>
 		  </div>
 		</div>
-  
-		<div class="slider-item" id="slider-bg2">
-			<div class="overlay"></div>
-		  <div class="container">
-			<div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-			<div class="col-md-8 text-center ftco-animate">
-			  <h1 class="mb-4">Fully Furnished<span> Apartments</span></h1>
-			  <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">For Rent</a></p>
-			</div>
-		  </div>
-		  </div>
-		</div>
+		{% endfor %}
 	  </section>
 	  <!-- END hero slider-->
 
-	<section class="ftco-services ftco-no-pb">
+	<section class="ftco-services ftco-no-pb" id="servicess">
 		<div class="container-wrap">
 			<div class="row no-gutters">
 	<div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-primary">
@@ -45,7 +36,7 @@
 			</span>
 		</div>
 		<div class="media-body p-2 mt-3">
-			<h3 class="heading">Property Managements</h3>
+			<h3 class="heading">Property Management</h3>
 			<p>We manage property including rent collection.</p>
 		</div>
 		</div>      
@@ -96,16 +87,18 @@
 		</div>
 	</section>
 
-	<section class="ftco-intro" id="intro-bg" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
+	<section class="ftco-intro" data-stellar-background-ratio="0.5">
+		<div class="overlay">
+			<img src="{{offer_property.image.url}}" alt="" height="350" width="1500">
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
-					<h2>Two Bedroom Apartments, Umoja</h2>
-					<p class="mb-0">Exquisite Spacious Roomed Apartments with Shared Swimming Pool, Supermarket and a Gym house all available at the Ground Floor.Spacious parking lot and tight security. </p>
+					<h2>{{offer_property.name}}</h2>
+					<p class="mb-0">{{offer_property.description}}</p>
 				</div>
 				<div class="col-md-3 d-flex align-items-center">
-					<p class="mb-0"><a href="#" class="btn btn-secondary px-4 py-3">Check Details</a></p>
+					<p class="mb-0"><a href="{% url 'loxpack-property' pk=offer_property.id %}" class="btn btn-secondary px-4 py-3">Check Details</a></p>
 				</div>
 			</div>
 		</div>
@@ -231,28 +224,28 @@
 	<div class="container-wrap">
 		<div class="row no-gutters">
 				<div class="col-md-3 ftco-animate">
-					<a href="{% static 'loxpack/images/nice.jpg' %}" class="gallery image-popup img d-flex align-items-center" id="intro-bg">
+					<a href="{% static 'loxpack/images/apartments/nice.jpg' %}" class="gallery image-popup img d-flex align-items-center" id="staff-img">
 						<div class="icon mb-4 d-flex align-items-center justify-content-center">
 						<span class="icon-instagram"></span>
 					</div>
 					</a>
 				</div>
 				<div class="col-md-3 ftco-animate">
-					<a href="{% static 'loxpack/images/balcony.jpg' %}" class="gallery image-popup img d-flex align-items-center" id="slider-bg2">
+					<a href="{% static 'loxpack/images/apartments/balcony.jpg' %}" class="gallery image-popup img d-flex align-items-center" id="sale-img">
 						<div class="icon mb-4 d-flex align-items-center justify-content-center">
 						<span class="icon-instagram"></span>
 					</div>
 					</a>
 				</div>
 				<div class="col-md-3 ftco-animate">
-					<a href="{% static 'loxpack/images/balconies.jpg' %}" class="gallery image-popup img d-flex align-items-center" id="slider-bg1">
+					<a href="{% static 'loxpack/images/apartments/balconies.jpg' %}" class="gallery image-popup img d-flex align-items-center" id="staff-img">
 						<div class="icon mb-4 d-flex align-items-center justify-content-center">
 						<span class="icon-instagram"></span>
 					</div>
 					</a>
 				</div>
 				<div class="col-md-3 ftco-animate">
-					<a href="{% static 'loxpack/images/estate.jpg' %}" class="gallery image-popup img d-flex align-items-center" id="intro-bg">
+					<a href="{% static 'loxpack/images/apartments/white.jpg' %}" class="gallery image-popup img d-flex align-items-center" id="sale-img">
 						<div class="icon mb-4 d-flex align-items-center justify-content-center">
 						<span class="icon-instagram"></span>
 					</div>

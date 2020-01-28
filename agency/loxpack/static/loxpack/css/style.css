@@ -5,21 +5,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-#map1 {
-  background-image: url("../images/don.jpg");
-}
-
-#slider-bg1 {
-  background-image: url("../images/apartments/balconies.jpg");
-}
-
-#slider-bg2 {
-  background-image: url("../images/apartments/nice.jpg");
-}
-
-#intro-bg {
-  background-image: url("../images/apartments/nice.jpg");
-}
 
 #staff-img {
   background-image: url("../images/apartments/bluesky.jpg");
@@ -8337,7 +8322,7 @@ h1, h2, h3, h4, h5,
         left: 0;
         right: 0;
         background: #000000;
-        opacity: .2; }
+        opacity: .9; }
       .owl-carousel.home-slider .slider-item .slider-text {
         height: 600px; }
         @media (max-width: 767.98px) {
@@ -8636,7 +8621,7 @@ h1, h2, h3, h4, h5,
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .2;
+    opacity: .9;
     background: #000000; }
 
 .course {
