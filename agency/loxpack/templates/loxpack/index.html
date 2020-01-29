@@ -10,7 +10,7 @@
 		{% for latest_property in latest_property %}
 		<div class="slider-item">
 			<div class="overlay">
-				<img src="{{latest_property.image.url}}" alt=""></div>
+				<img src="{{latest_property.image.url}}" alt=""height=800 width=1000></div>
 		  <div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
 			<div class="col-md-8 text-center ftco-animate">
@@ -129,8 +129,9 @@
 							<h3>{{apartment.name}}</h3>
 							</a>
 							<span class="position mb-2">{{apartment.area}}</span>
+							<span class="position mb-2">{{apartment.status}}</span>
 							<div class="faded">
-								<p>{{apartment.description}}</p>
+								<p class="mb-0"><a href="{% url 'loxpack-property' pk=apartment.id %}" class="btn btn-secondary px-4 py-3">Check Details</a></p>
 			</div>
 						</div>
 					</div>
@@ -159,7 +160,9 @@
 					<div class="text bg-light p-4">
 						<h3><a href="{% url 'loxpack-property' pk=sale_prop.id %}">{{sale_prop.name}}</a></h3>
 						<p class="subheading"><span>Price:</span> {{sale_prop.price}} M</p>
-						<p>{{sale_prop.description}}</p>
+						<p class="subheading"><span>Location:</span> {{sale_prop.area}}</p>
+						<p class="subheading">{{sale_prop.status}}</p>
+						<p class="mb-0"><a href="{% url 'loxpack-property' pk=sale_prop.id %}" class="btn btn-secondary px-4 py-3">Details</a></p>
 					</div>
 				</div>
 				{% endfor %}

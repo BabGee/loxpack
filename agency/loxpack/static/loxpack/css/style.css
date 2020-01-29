@@ -15,19 +15,19 @@
 }
 
 #testi-img1 {
-  background-image: url("../images/testimonial/teacher-1.jpg");
+  background-image: url("../images/testimonial/testi1.jpg");
 } 
 
 #testi-img2 {
-  background-image: url("../images/testimonial/teacher-2.jpg");
+  background-image: url("../images/testimonial/testi3.jpg");
 }
 
 #testi-img3 {
-  background-image: url("../images/testimonial/teacher-3.jpg");
+  background-image: url("../images/testimonial/testi2.jpg");
 }
 
 #testi-img4 {
-  background-image: url("../images/testimonial/teacher-4.jpg");
+  background-image: url("../images/testimonial/testi4jpg");
 }
 
  :root {
