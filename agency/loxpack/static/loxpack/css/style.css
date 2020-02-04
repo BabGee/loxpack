@@ -5,6 +5,39 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+.search-sec{
+    padding: 2rem;
+    padding-bottom: 6rem;
+}
+.search-slt{
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+.wrn-btn{
+    background-color : #28a745 !important;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+
+
+@media (max-width: 992px){
+    .search-sec{
+        background: rgb(63, 175, 48)
+    }
+}
+
 
 #staff-img {
   background-image: url("../images/apartments/bluesky.jpg");
@@ -6535,7 +6568,7 @@ button.bg-dark:focus {
   margin-left: 3rem !important; }
 
 .p-0 {
-  padding: 0 !important; }
+  padding: 10 !important; }
 
 .pt-0,
 .py-0 {
@@ -8007,7 +8040,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   font-family: "Work Sans", Arial, sans-serif;
-  background: rgb(243, 248, 245);
+  background: #fff;
   font-size: 16px;
   line-height: 1.8;
   font-weight: 400;
@@ -8035,7 +8068,7 @@ h1, h2, h3, h4, h5,
   font-weight: 400; }
 
 .text-primary {
-  color: #1eaaf1 !important; }
+  color: #17a32f98 !important; }
 
 .topper {
   font-size: 15px;
@@ -8444,13 +8477,13 @@ h1, h2, h3, h4, h5,
   background: #fda638 !important; }
 
 .bg-tertiary {
-  background: #8cc152; }
+  background: #17a32f98; }
 
 .bg-quarternary {
-  background: #f1453d; }
+  background: #17a32f98; }
 
 .bg-fifth {
-  background: #5d50c6; }
+  background: #17a32f98; }
 
 .ftc-no-pb {
   padding-bottom: 0 !important; }
@@ -8583,7 +8616,7 @@ h1, h2, h3, h4, h5,
     position: relative;
     width: 80px;
     height: 80px;
-    background: #1eaaf1;
+    background: #17a32f98;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -8639,6 +8672,7 @@ h1, h2, h3, h4, h5,
       font-weight: 500;
       font-size: 24px; }
   .course .img {
+    margin-left: 15px;
     width: 250px; }
     @media (max-width: 991.98px) {
       .course .img {
@@ -9109,7 +9143,7 @@ textarea.form-control {
   font-weight: 600;
   color: #fda638; }
   .heading-section h2 span {
-    color: #5d50c6; }
+    color: #3f905a; }
   @media (max-width: 767.98px) {
     .heading-section h2 {
       font-size: 28px; } }
@@ -9268,10 +9302,11 @@ textarea.form-control {
 .mfp-with-zoom.mfp-removing.mfp-bg {
   opacity: 0; }
 
+
 #section-counter {
   position: relative;
   z-index: 0;
-  background-image: url("../images/apartments/nice.jpg");}
+  background-image: url("../images/apartments/town.jpg");}
   #section-counter:after {
     position: absolute;
     top: 0;
@@ -9301,12 +9336,13 @@ textarea.form-control {
   .ftco-counter .text strong.number {
     font-weight: 500;
     font-size: 50px;
-    color: #1eaaf1;
+    color: #1c8358;
     display: block; }
   .ftco-counter .text span {
     display: block;
     font-size: 16px;
-    color: rgba(0, 0, 0, 0.8); }
+    font-weight: 400;
+    color: #1c8358; }
   @media (max-width: 767.98px) {
     .ftco-counter .counter-wrap {
       margin-bottom: 20px; } }

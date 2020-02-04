@@ -18,49 +18,23 @@
 </section>
 
 <main class="mt-5 pt-4">
-    <div class="container dark-grey-text mt-5">
+    <div class="row">
     {% for property in sale_property %} 
-      <!--Grid row-->
-      <div class="row wow fadeIn">
-
-        <!--Grid column-->
-        <div class="col-md-6 mb-4">
-          <a href="{% url 'loxpack-property' pk=property.id %}">  
-            <img src="{{property.image.url}}" class="img-fluid" alt="" height=300 width=400>
+      <div class="col-md-6 course d-lg-flex ftco-animate">
+        <div class="img">
+          <a href="{% url 'loxpack-property' pk=property.id %}">
+          <img src="{{property.image.url}}" alt="" height="250" width="320">
           </a>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-6 mb-4">
-
-          <!--Content-->
-          <div class="p-4">
-
-            <div class="mb-3">
-              <a href="{% url 'loxpack-property' pk=property.id %}">
-                <span class="badge purple mr-1">{{ property.name}}</span>
-              </a>
-            </div>
-
-            <p class="lead">
-              <span>Kshs {{ property.price }}M</span>
-            </p>
-
-            <p class="lead font-weight-bold">Description</p>
-
-            <p>{{ property.description }}</p>
-
-          </div>
-          <!--Content-->
-
+        <div class="text bg-light p-4">
+          <h3><a href="{% url 'loxpack-property' pk=property.id %}">{{property.name}}</a></h3>
+          <p class="subheading"><span>Price:</span> {{property.price}} </p>
+          <p class="subheading"><span>Location:</span> {{property.area}}</p>
+          <p class="mb-0"><a href="{% url 'loxpack-property' pk=property.id %}" class="btn btn-secondary px-4 py-3">Details</a></p>
         </div>
-        <!--Grid column-->
-
       </div>
-      <!--Grid row-->
-      {% endfor %}
-    </div>
+    {% endfor %} 
+    </div> 
 </main>
 
 {% endblock content %}

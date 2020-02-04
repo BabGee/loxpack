@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from loxpack.views import SearchResultsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('loxpack.urls'))
+    path('', include('loxpack.urls')),
+    path('search/', SearchResultsView.as_view(), name='search_results'),
 ]
 
 if settings.DEBUG:
