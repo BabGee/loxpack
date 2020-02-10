@@ -1,5 +1,6 @@
 {% extends 'loxpack/base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block title %} Details {% endblock %}
 
@@ -7,17 +8,8 @@
 
 <main class="mt-5 pt-4">
 
-  <section class="hero-wrap hero-wrap-2" id="staff-img">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text align-items-center justify-content-center">
-        <div class="col-md-9 ftco-animate text-center">
-          <h1 class="mb-2 bread">Details</h1>
-          <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'loxpack-home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Details <i class="ion-ios-arrow-forward"></i></span></p>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% include 'loxpack/hero.html' %}
+  {% include 'loxpack/search_bar.html' %}
   
     <div class="container dark-grey-text mt-5">
 
@@ -45,12 +37,16 @@
             </div>
 
             <p class="lead">
-              <span>Kshs {{ property.price }}</span>
+              <span>Kshs {{ property.price|intcomma }}</span>
             </p>
 
             <p class="lead font-weight-bold">Description</p>
 
             <p>{{ property.description }}</p>
+
+            <div class="faded">
+              <p class="mb-0"><a href="{% url 'loxpack-property' pk=property.id %}" class="btn btn-secondary px-4 py-3">Check Details</a></p>
+            </div>
 
           </div>
           <!--Content-->
@@ -72,7 +68,7 @@
       </div>
       <div class="row wow fadeIn">
         <!--Grid column-->
-        {% for stat in stats %}
+        {% for stat in stat %}
         <div class="col-md-6 mb-4">
           <a href="{% url 'loxpack-property' pk=stat.id %}">
             <img src="{{stat.image.url}}" class="img-fluid" alt="" height=300 width=400>  
@@ -86,6 +82,10 @@
             </div>
 
             <p>{{stat.description}}</p>
+
+            <div class="faded">
+              <p class="mb-0"><a href="{% url 'loxpack-property' pk=stat.id %}" class="btn btn-secondary px-4 py-3">Check Details</a></p>
+            </div>
 
           </div>
           <!--Content-->

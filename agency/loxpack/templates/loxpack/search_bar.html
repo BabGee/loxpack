@@ -1,22 +1,22 @@
 <section class="search-sec">
     <div class="container">
-        <form action="{% url 'search_results' %}" method="get">
+        <form action="{% url 'search-results' %}" method="get">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                            <select class="form-control search-slt" id="exampleFormControlSelect1">
+                            <select class="form-control search-slt" id="exampleFormControlSelect1" name="loc_contains">
                                 <option>Select Location</option>
                                 {% for loc in location %}
-                                <option name="q1">{{loc.name}}</option>
+                                <option value="{{loc.name}}">{{loc.name}}</option>
                                 {% endfor %}
                             </select>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                            <select class="form-control search-slt" id="exampleFormControlSelect1">
+                            <select class="form-control search-slt" id="exampleFormControlSelect1" name="stat_contains">
                                 <option>For Rent/Sale</option>
                                 {% for stat in stats %}
-                                <option name="q2">{{stat.name}}</option>
+                                <option value="{{stat.name}}">{{stat.name}}</option>
                                 {% endfor %}
                             </select>
                         </div>

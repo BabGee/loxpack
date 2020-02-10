@@ -9,6 +9,5 @@ urlpatterns = [
     path('forsale/', views.sale, name='loxpack-sale'),
     path('forrent/', views.rent, name='loxpack-rent'),
     path('contact/', views.contact, name='loxpack-contact'),
-    #path('email/', views.emailView, name='email'),
-    #path('success/', views.successView, name='success'),
+    path('search/', views.search_results, name='search-results'),
 ]

@@ -1,19 +1,75 @@
 {% extends 'loxpack/base.html' %}
 {% load static %}
+{% load humanize %}
 
-{% block title %} Home {% endblock title %}
+{% block title %} Search Results {% endblock title %}
 
 {% block content %}
 
-<div>
-    <ul>
-        {% for prop in search_query_rslt %}
-          <li>
-            {{ prop.name }}
-          </li>
-        {% endfor %}
-      </ul>
-</div>
 
+  {% include 'loxpack/hero.html' %}
+  {% include 'loxpack/search_bar.html' %}
+
+  <main class="mt-5 pt-4">
+    <div class="row">
+      {% for property in search_query_rslt %} 
+      <div class="col-md-6 course d-lg-flex ftco-animate">
+        <div class="img">
+          <a href="{% url 'loxpack-property' pk=property.id %}">
+          <img src="{{property.image.url}}" alt="" height="250" width="320">
+          </a>
+        </div>
+        <div class="text bg-light p-4">
+          <h3><a href="{% url 'loxpack-property' pk=property.id %}">{{property.name}}</a></h3>
+          <p class="subheading"><span>Price:</span> {{property.price|intcomma}} </p>
+          <p class="subheading"><span>Location:</span> {{property.area}}</p>
+          <p class="mb-0"><a href="{% url 'loxpack-property' pk=property.id %}" class="btn btn-secondary px-4 py-3">Details</a></p>
+        </div>
+      </div>
+    {% endfor %} 
+    </div> 
+
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="text-center mb-5">
+        <h1>Similar Properties</h1>
+      </div>
+      <div class="row wow fadeIn">
+        <!--Grid column-->
+        {% for stat in similar_search %}
+        <div class="col-md-6 mb-4">
+          <a href="{% url 'loxpack-property' pk=stat.id %}">
+            <img src="{{stat.image.url}}" class="img-fluid" alt="" height=300 width=400>  
+          </a>
+          <div class="p-4">
+
+            <div class="mb-3">
+              <a href="{% url 'loxpack-property' pk=stat.id %}">
+                <span class="badge purple mr-1">{{stat.name}}</span>
+              </a>
+            </div>
+
+            <p>{{stat.description}}</p>
+            <p class="mb-0"><a href="{% url 'loxpack-property' pk=stat.id %}" class="btn btn-secondary px-4 py-3">Details</a></p>
+
+          </div>
+          <!--Content-->
+
+        </div>
+        {% endfor %}
+        <!--Grid column-->
+
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+    </div>
+
+</main>
+  
+
+   
 
 {% endblock %}
