@@ -3,7 +3,12 @@
 hosted at http://babgee.pythonanywhere.com/
 
 
-# loxpack
+# Screenshots
+
+![lox](https://user-images.githubusercontent.com/39271713/75101315-bfb1d680-55eb-11ea-8626-d5580cc0c438.png)
+
+![lox](https://user-images.githubusercontent.com/39271713/75101311-b58fd800-55eb-11ea-8d86-2b48fa21e926.png)
+
 
 **loxpack** is a real estate agency web application written in Python 3 and using Django framework.
 The application allows users search for Property and view the details before contacting the agents. It allows admins to add different Categories and property in the backend. 
